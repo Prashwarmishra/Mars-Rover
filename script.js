@@ -1,13 +1,13 @@
 const currentDate = new Date;
-let dateSelected=currentDate.getFullYear()+'-'+(currentDate.getMonth())+'-'+currentDate.getDate();
+let dateSelected = currentDate.getFullYear() + '-' + (currentDate.getMonth()) + '-' + currentDate.getDate();
 
-function updateDate(event){
+function updateDate(event) {
     event.preventDefault();
     dateSelected = $('#date-select').val();
     fetch();
 }
 
-function fetch(){
+function fetch() {
     $.ajax({
         url: "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos",
         method: 'GET',
@@ -19,10 +19,10 @@ function fetch(){
     });
 }
 
-function updateImages(data){
+function updateImages(data) {
     $('#image-container').empty();
     let photos = data.photos;
-    for(let photo of photos){
+    for (let photo of photos) {
         let child = $(document.createElement('img'));
         child.attr('src', photo.img_src);
         child.css({
@@ -31,7 +31,6 @@ function updateImages(data){
             margin: "20px",
         });
         $('#image-container').append(child);
-        console.log(photo.earth_date);
     }
 }
 
