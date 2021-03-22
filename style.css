@@ -67,3 +67,31 @@ button {
     flex-wrap: wrap;
     justify-content: center;
 }
+
+#image-container img {
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+footer button {
+    width: 6em;
+    height: 2.5em;
+    cursor: pointer;
+}
+
+footer input {
+    width: 7em;
+    height: 2em;
+    border: none;
+    padding: 3px;
+}
+
+footer button:hover {
+    box-shadow: 1px 1px black;
+}
